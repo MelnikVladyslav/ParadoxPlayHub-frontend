@@ -1,0 +1,14 @@
+.imgBut{
+    width: 96.7px;
+    height: 67.81px;
+    align-items: center;
+    justify-content: center;
+    background: transparent; 
+    border: none;
+    padding: 0;
+}
+
+.imgBut img{
+    width: 96.7px;
+    height: 67.81px;
+}
