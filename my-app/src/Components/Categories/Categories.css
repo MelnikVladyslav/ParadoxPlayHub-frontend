@@ -1,0 +1,41 @@
+.cat{
+    width: 1056px;
+    height: auto;
+    background-color: white;
+    color: black;
+    border-radius: 21px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.cat h1{
+    color: #000;
+    font-family: Aclonica;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 10px;
+}
+
+.cat ul{
+    color: #000;
+    font-family: Aclonica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex; 
+    flex-wrap: wrap; 
+    list-style: none;
+}
+
+.cat ul li{
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.cat a{
+    color: black;
+    text-decoration-line: none;
+}
