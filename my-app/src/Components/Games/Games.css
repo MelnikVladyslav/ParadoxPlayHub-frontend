@@ -1,11 +1,14 @@
 .gamesDiv{
     background-color: white;
     color: black;
-    width: auto;
-    height: 100%;
+    width: 90%;
+    height: auto;
     margin: 10px;
     padding: 10px;
     border-radius: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gameCard{
@@ -14,6 +17,7 @@
     height: 134px;
     color: black;
     padding: 5px;
+    margin-right: auto;
     border-radius: 21px;
 }
 

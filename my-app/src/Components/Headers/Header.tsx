@@ -3,19 +3,22 @@ import './Header.css';
 import ImageButton from '../UI/ImageButton';
 
 function Header() {
-    // Initialize a state variable to store the text value
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Search
     const [text, setText] = useState(''); 
 
-    // Function to handle changes in the input field
     const handleTextChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
         // Update the state with the new text value when the input changes
         setText(e.target.value);
     };
 
+    // burger menu
     const handleButtonClick = () => {
-        // Handle the button click event here
-        console.log('Button clicked!');
-      };
+        setIsMenuOpen(!isMenuOpen); // Змінюємо стан при кожному натисканні на кнопку.
+    };
+
+    //signin/sign up
 
     return (
         <header className='header'>
@@ -36,6 +39,13 @@ function Header() {
                 onClick={handleButtonClick}
                 altText="Image Button"
             />
+
+            {isMenuOpen && (
+                <div className="side-menu">
+                    <img src='/img/b2a3a7add962f529aed34acb8d46a38e.png'/>
+                    <button>Sign in/Sign up</button>
+                </div>
+            )}
         </header>
     );
 }
