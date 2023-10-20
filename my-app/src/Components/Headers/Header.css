@@ -41,15 +41,15 @@
 
 .side-menu {
     display: flex;
+    flex-direction: column;
     width: 270px;
-    height: 91px;
+    height: auto;
     position: fixed;
     top: 50%;
     right: 3%;
     transition: left 0.3s ease-in;
     background-color: white;
     border-radius: 21px;
-    justify-content: center;
     align-items: center;
 }
   
@@ -74,5 +74,23 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 2%;
 }
-  
+
+.side-menu button a{
+    text-decoration: none;
+}
+
+.profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2%;
+}  
+
+.items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+} 

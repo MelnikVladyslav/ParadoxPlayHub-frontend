@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { baseUrl, getGameUrl, getGanresUrl, getNewsUrl } from './connectionString';
+import { baseUrl, getGameUrl, getGanresUrl, getNewsUrl, signInUrl } from './connectionString';
 
-export const getGanres = () => {
+  export const getGanres = () => {
     return axios.get(baseUrl + getGanresUrl)
       .then(response => response.data)
       .catch(error => {
@@ -23,4 +23,13 @@ export const getGanres = () => {
       .catch(error => {
         throw error;
       });
+  };
+
+  export const register = (userDTO: UserDTO) => {
+      return axios.post(baseUrl + signInUrl, userDTO)
+        .then(responce => responce.data)
+        .catch(error => {
+            throw error;
+        });
+      
   };

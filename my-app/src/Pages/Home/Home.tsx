@@ -1,9 +1,9 @@
 import React from 'react';
 import './Home.css';
-import Header from '../Headers/Header';
-import Fotter from '../Fotter/Fotter';
-import Categories from '../Categories/Categories';
-import Games from '../Games/Games';
+import Header from '../../Components/Headers/Header';
+import Fotter from '../../Components/Fotter/Fotter';
+import Categories from '../../Components/Categories/Categories';
+import Games from '../../Components/Games/Games';
 
 function Home() {
 

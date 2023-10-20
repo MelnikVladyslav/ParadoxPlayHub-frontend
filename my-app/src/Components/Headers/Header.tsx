@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import './Header.css';
 import ImageButton from '../UI/ImageButton';
+import { Link } from 'react-router-dom';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const userStr = localStorage.getItem('user');
+    let user: User | null = null;
+
+    if (userStr !== null) {
+        user = JSON.parse(userStr);
+    }
+    const [isLog, setIsLog] = useState(user !== null);
+    
 
     // Search
     const [text, setText] = useState(''); 
@@ -17,8 +26,6 @@ function Header() {
     const handleButtonClick = () => {
         setIsMenuOpen(!isMenuOpen); // Змінюємо стан при кожному натисканні на кнопку.
     };
-
-    //signin/sign up
 
     return (
         <header className='header'>
@@ -40,10 +47,31 @@ function Header() {
                 altText="Image Button"
             />
 
-            {isMenuOpen && (
+            {isMenuOpen && !isLog && (
                 <div className="side-menu">
                     <img src='/img/b2a3a7add962f529aed34acb8d46a38e.png'/>
-                    <button>Sign in/Sign up</button>
+                    <button>
+                        <Link to="/signIn">Sign in/Sign up</Link>
+                    </button>
+                </div>
+            )}
+            {isMenuOpen && isLog && (
+                <div className="side-menu">
+                    <div className='profile'>
+                    <img src={user?.url}/>
+                    <button>
+                        <Link to="/">Profile</Link>
+                    </button>
+                    </div>
+                    <div className='items'>
+                        <button>
+                            <Link to="/">Library</Link>
+                        </button>
+                        <button>
+                            <Link to="/">Download</Link>
+                        </button>
+                        <button>Log out</button>
+                    </div>
                 </div>
             )}
         </header>
