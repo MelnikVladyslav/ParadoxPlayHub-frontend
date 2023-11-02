@@ -33,3 +33,12 @@ import { baseUrl, getGameUrl, getGanresUrl, getNewsUrl, signInUrl } from './conn
         });
       
   };
+
+  export const signUpApi = (userDTO: SignUpDTO) => {
+    return axios.post(baseUrl + signInUrl, userDTO)
+      .then(responce => responce.data)
+      .catch(error => {
+          throw error;
+      });
+    
+};

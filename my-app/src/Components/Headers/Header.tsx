@@ -13,7 +13,6 @@ function Header() {
     }
     const [isLog, setIsLog] = useState(user !== null);
     
-
     // Search
     const [text, setText] = useState(''); 
 
@@ -26,6 +25,13 @@ function Header() {
     const handleButtonClick = () => {
         setIsMenuOpen(!isMenuOpen); // Змінюємо стан при кожному натисканні на кнопку.
     };
+
+    //log out
+    const logOut = () => {
+        user = null;
+        localStorage.setItem('user', JSON.stringify(user));
+        window.location.reload();
+    }
 
     return (
         <header className='header'>
@@ -70,7 +76,9 @@ function Header() {
                         <button>
                             <Link to="/">Download</Link>
                         </button>
-                        <button>Log out</button>
+                        <button onClick={logOut}>
+                            <Link to="/">Log out</Link>
+                        </button>
                     </div>
                 </div>
             )}

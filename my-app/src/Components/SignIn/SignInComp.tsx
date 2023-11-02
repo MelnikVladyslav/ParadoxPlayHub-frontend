@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './SignInComp.css';
-import { register } from '../../ApiService/ApiService';
+import { register, signUpApi } from '../../ApiService/ApiService';
 import { Link } from 'react-router-dom';
 
 function SignInComp() {
@@ -29,6 +29,25 @@ function SignInComp() {
         }
 
         register(sendUser)
+        .then(
+            data => {
+                setUser(data);
+            })
+        .catch(error => {
+            // Обробка помилки
+            console.error(error);
+          });
+
+          localStorage.setItem('user', JSON.stringify(user));
+    };
+
+    const signUp = (email: string, password: string) => {
+        const sendUser: SignUpDTO = {
+            email: email,
+            password: password
+        }
+
+        signUpApi(sendUser)
         .then(
             data => {
                 setUser(data);
@@ -75,6 +94,9 @@ function SignInComp() {
 
             <button onClick={() => signIn(firstName, email, password)}>
                 <Link to="/">Enter</Link>
+            </button>
+            <button onClick={() => signUp(email, password)}>
+                <Link to="/">Sign Up</Link>
             </button>
             <button>Sign in Google</button>
         </div>
