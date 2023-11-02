@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseUrl, getGameUrl, getGanresUrl, getNewsUrl, signInUrl } from './connectionString';
+import { baseUrl, getGameUrl, getGanresUrl, getMyGamesUrl, getNewsUrl, signInUrl } from './connectionString';
 
   export const getGanres = () => {
     return axios.get(baseUrl + getGanresUrl)
@@ -41,4 +41,12 @@ import { baseUrl, getGameUrl, getGanresUrl, getNewsUrl, signInUrl } from './conn
           throw error;
       });
     
+};
+
+export const getMyGames = () => {
+  return axios.get(baseUrl + getMyGamesUrl)
+    .then(response => response.data)
+    .catch(error => {
+      throw error;
+    });
 };

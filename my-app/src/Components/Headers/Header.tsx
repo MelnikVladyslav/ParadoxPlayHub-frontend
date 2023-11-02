@@ -71,7 +71,7 @@ function Header() {
                     </div>
                     <div className='items'>
                         <button>
-                            <Link to="/">Library</Link>
+                            <Link to="/library">Library</Link>
                         </button>
                         <button>
                             <Link to="/">Download</Link>

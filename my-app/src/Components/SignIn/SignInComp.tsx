@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SignInComp.css';
 import { register, signUpApi } from '../../ApiService/ApiService';
 import { Link } from 'react-router-dom';
+import GoogleLogin, { GoogleLoginResponse, GoogleLoginResponseOffline } from 'react-google-login';
 
 function SignInComp() {
     const [firstName, setfirstName] = useState('');
@@ -98,7 +99,6 @@ function SignInComp() {
             <button onClick={() => signUp(email, password)}>
                 <Link to="/">Sign Up</Link>
             </button>
-            <button>Sign in Google</button>
         </div>
     );
 }

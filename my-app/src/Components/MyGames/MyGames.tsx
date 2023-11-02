@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './Games.css';
-import { getGames } from '../../ApiService/ApiService';
+import './MyGames.css';
+import { getMyGames } from '../../ApiService/ApiService';
 
-function Games() {
+function MyGames() {
     const [games, setGames] = useState<Game[]>([]);
-
-    //get games
+    
+    //get my games
     useEffect(() => {
         // Викликаємо функцію при завантаженні сторінки
-        getGames()
+        getMyGames()
           .then(data => {
             // Отримані дані доступні тут
             setGames(data);
@@ -32,4 +32,4 @@ function Games() {
     );
 }
 
-export default Games;
+export default MyGames;
