@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Games.css';
 import { getGames } from '../../ApiService/ApiService';
+import { Link } from 'react-router-dom';
 
 function Games() {
     const [games, setGames] = useState<Game[]>([]);
@@ -25,7 +26,9 @@ function Games() {
                 <div key={item.id} className='gameCard'>
                     <h1>{item.name}</h1>
                     <img src={item.imagePath}/>
-                    <button>Enter</button>
+                    <button>
+                      <Link to={`/game/${item.id}`}>Enter</Link>
+                    </button>
                 </div>        
             ))}
         </div>

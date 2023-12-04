@@ -1,0 +1,36 @@
+.back{
+    background-color: white;
+    height: auto;
+    width: auto;
+    padding: 5%;
+    display: flex;
+}
+
+.name{
+    width: auto;
+}
+
+.back div{
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0 1%;
+}
+
+.back img{
+    width: 310px;
+    height: 255px;
+}
+
+p, h1, h3{
+    color: #000;
+    font-family: Aclonica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.div h1{
+    text-align: center;
+
+}
